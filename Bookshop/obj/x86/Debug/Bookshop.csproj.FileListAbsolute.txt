@@ -1,0 +1,12 @@
+C:\Users\marcel\Documents\Visual Studio 2010\Projects\Bookshop\Bookshop\bin\Debug\Bookshop.exe
+C:\Users\marcel\Documents\Visual Studio 2010\Projects\Bookshop\Bookshop\bin\Debug\Bookshop.pdb
+C:\Users\marcel\Documents\Visual Studio 2010\Projects\Bookshop\Bookshop\obj\x86\Debug\Bookshop.Properties.Resources.resources
+C:\Users\marcel\Documents\Visual Studio 2010\Projects\Bookshop\Bookshop\obj\x86\Debug\Bookshop.csproj.GenerateResource.Cache
+C:\Users\marcel\Documents\Visual Studio 2010\Projects\Bookshop\Bookshop\obj\x86\Debug\Bookshop.exe
+C:\Users\marcel\Documents\Visual Studio 2010\Projects\Bookshop\Bookshop\obj\x86\Debug\Bookshop.pdb
+C:\Users\marcel\Documents\Visual Studio 2010\Projects\Bookshop\Bookshop\obj\x86\Debug\Bookshop.Form2.resources
+C:\Users\marcel\Documents\Visual Studio 2010\Projects\Bookshop\Bookshop\obj\x86\Debug\Bookshop.Form1.resources
+C:\Users\marcel\Documents\Visual Studio 2010\Projects\Bookshop\Bookshop\bin\Debug\Database.mdf
+C:\Users\marcel\Documents\Visual Studio 2010\Projects\Bookshop\Bookshop\bin\Debug\Database_log.ldf
+C:\Users\marcel\Documents\Visual Studio 2010\Projects\Bookshop\Bookshop\bin\Debug\Bookshop.exe.config
+C:\Users\marcel\Documents\Visual Studio 2010\Projects\Bookshop\Bookshop\obj\x86\Debug\Bookshop.csprojResolveAssemblyReference.cache
