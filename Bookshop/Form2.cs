@@ -10,16 +10,30 @@ using System.Data.SqlClient;
 
 namespace Bookshop
 {
+    
     public partial class Form2 : Form
     {
+        const int PictureHeight = 280;
+        const int PictureWidth = 200;
+        const int PanelHeight = PictureHeight + 130;
+        const int panelWidth = PictureWidth;
+
         public Form2()
         {
             InitializeComponent();
+            Size = new Size(940,800);
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            Size = new Size(500, 500);
+            
+            DrawBooks();
+        }
+
+        private void DrawBooks()
+        {
+            //Create connection and store Table Data into a variable
             string conString = @"Data Source=.\SQLEXPRESS;AttachDbFilename=" + Application.StartupPath + "\\Database.MDF;Integrated Security=True;User Instance=True";
             string sql = @"SELECT * FROM Books";
             SqlConnection con = new SqlConnection(conString);
@@ -29,20 +43,52 @@ namespace Bookshop
             DataTable dt = new DataTable();
             da.Fill(dt);
 
-            //new.dt.Rows.Count;
+            //Create a panel for each book and save labels / buttons into panels
             int i = 0;
-            List<Label> lis = new List<Label>();
+            List<FlowLayoutPanel> panels = new List<FlowLayoutPanel>();
             foreach (DataRow Row in dt.Rows)
             {
-                Label a = new Label();
-                a.AutoSize = true;
-                a.Text = Row["Title"].ToString();
-                a.Location = new Point(i * 80, 20);
-                Controls.Add(a);
+                //Create panel
+                FlowLayoutPanel temp = new FlowLayoutPanel();
+                temp.FlowDirection = FlowDirection.TopDown;
+                temp.Location = new Point(20 + (i % 4) * (PictureWidth + 20) , 20 + (i / 4) * (PanelHeight + 20));
+                temp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+                temp.Height = PanelHeight;
+                temp.Width = panelWidth;
+
+                //Add elements to the panel
+                CreatePictureBox(Row["Title"].ToString(), temp);
+                CreateLabel("Title: " + Row["Title"].ToString(), temp);
+                CreateLabel("Author: " + Row["Author"].ToString(), temp);
+                CreateLabel("Pages: " + Row["Pages"].ToString(), temp);
+                CreateLabel("Price: " + Row["Price"].ToString(), temp);
+                CreateLabel("Stock: " + Row["Stock"].ToString(), temp);
+
+                panels.Add(temp);
+                this.Controls.Add(temp);
                 i++;
             }
-            
-            //picture 250 350
         }
+
+        private void CreateLabel(String text, FlowLayoutPanel panel)
+        {
+            Label newLabel = new Label();
+            newLabel.Text = text;
+            newLabel.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top | AnchorStyles.Bottom;
+            newLabel.TextAlign = ContentAlignment.MiddleCenter;
+            panel.Controls.Add(newLabel);
+        }
+
+        private void CreatePictureBox(String Title, FlowLayoutPanel panel)
+        {
+            PictureBox cover = new PictureBox();
+            cover.Height = PictureHeight; 
+            cover.Width = PictureWidth;
+            cover.SizeMode = PictureBoxSizeMode.Zoom;
+            cover.ImageLocation = @Application.StartupPath + "\\Images\\" + Title + ".jpg";
+            
+            panel.Controls.Add(cover);
+        }
+
     }
 }
