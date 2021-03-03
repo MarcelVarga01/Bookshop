@@ -17,7 +17,7 @@ namespace Bookshop
         const int PictureWidth = 200;
         const int PanelHeight = PictureHeight + 130;
         const int panelWidth = PictureWidth;
-
+        const int SPACING = 25;
         public Form2()
         {
             InitializeComponent();
@@ -27,15 +27,19 @@ namespace Bookshop
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            
-            DrawBooks();
+            //SortBy.this.Text = SortBy.TITLE;
+            DrawBooks("");
         }
 
-        private void DrawBooks()
+        private void DrawBooks(String SortBy)
         {
             //Create connection and store Table Data into a variable
             string conString = @"Data Source=.\SQLEXPRESS;AttachDbFilename=" + Application.StartupPath + "\\Database.MDF;Integrated Security=True;User Instance=True";
-            string sql = @"SELECT * FROM Books";
+            string sql = "new";
+            if (SortBy.Equals("")) sql = @"SELECT * FROM Books";
+            else sql = @"SELECT * FROM Books ORDER BY " + SortBy;
+
+            //string sql = @"SELECT * FROM Books";
             SqlConnection con = new SqlConnection(conString);
             con.Open();
             SqlDataAdapter da = new SqlDataAdapter(sql, con);
@@ -51,7 +55,7 @@ namespace Bookshop
                 //Create panel
                 FlowLayoutPanel temp = new FlowLayoutPanel();
                 temp.FlowDirection = FlowDirection.TopDown;
-                temp.Location = new Point(20 + (i % 4) * (PictureWidth + 20) , 20 + (i / 4) * (PanelHeight + 20));
+                temp.Location = new Point(SPACING + (i % 4) * (PictureWidth + SPACING), SPACING + (i / 4) * (PanelHeight + SPACING));
                 temp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
                 temp.Height = PanelHeight;
                 temp.Width = panelWidth;
@@ -88,6 +92,11 @@ namespace Bookshop
             cover.ImageLocation = @Application.StartupPath + "\\Images\\" + Title + ".jpg";
             
             panel.Controls.Add(cover);
+        }
+
+        private void sortByToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            DrawBooks(e.ClickedItem.Text);
         }
 
     }
