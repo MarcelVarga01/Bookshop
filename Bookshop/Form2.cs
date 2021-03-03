@@ -52,7 +52,6 @@ namespace Bookshop
                 //Create panel
                 FlowLayoutPanel temp = new FlowLayoutPanel();
                 temp.FlowDirection = FlowDirection.TopDown;
-                //temp.Location = new Point(SPACING + (i % 4) * (PictureWidth + SPACING), SPACING + (i / 4) * (PanelHeight + SPACING));
                 temp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
                 temp.Height = PanelHeight;
                 temp.Width = panelWidth;
