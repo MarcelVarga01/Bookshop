@@ -32,9 +32,9 @@
             this.sortByToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.titleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.authorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.priceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administratorOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,6 +59,7 @@
             this.sortByToolStripMenuItem.Name = "sortByToolStripMenuItem";
             this.sortByToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
             this.sortByToolStripMenuItem.Text = "Sort By";
+            this.sortByToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.sortByToolStripMenuItem_DropDownItemClicked);
             // 
             // titleToolStripMenuItem
             // 
@@ -72,6 +73,12 @@
             this.authorToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
             this.authorToolStripMenuItem.Text = "Author";
             // 
+            // pagesToolStripMenuItem
+            // 
+            this.pagesToolStripMenuItem.Name = "pagesToolStripMenuItem";
+            this.pagesToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.pagesToolStripMenuItem.Text = "Pages";
+            // 
             // priceToolStripMenuItem
             // 
             this.priceToolStripMenuItem.Name = "priceToolStripMenuItem";
@@ -83,12 +90,6 @@
             this.administratorOptionsToolStripMenuItem.Name = "administratorOptionsToolStripMenuItem";
             this.administratorOptionsToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
             this.administratorOptionsToolStripMenuItem.Text = "Administrator Options";
-            // 
-            // pagesToolStripMenuItem
-            // 
-            this.pagesToolStripMenuItem.Name = "pagesToolStripMenuItem";
-            this.pagesToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
-            this.pagesToolStripMenuItem.Text = "Pages";
             // 
             // Form2
             // 

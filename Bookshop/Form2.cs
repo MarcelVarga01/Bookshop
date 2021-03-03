@@ -18,6 +18,7 @@ namespace Bookshop
         const int PanelHeight = PictureHeight + 130;
         const int panelWidth = PictureWidth;
         const int SPACING = 25;
+        List<FlowLayoutPanel> panels = new List<FlowLayoutPanel>();
         public Form2()
         {
             InitializeComponent();
@@ -49,7 +50,7 @@ namespace Bookshop
 
             //Create a panel for each book and save labels / buttons into panels
             int i = 0;
-            List<FlowLayoutPanel> panels = new List<FlowLayoutPanel>();
+
             foreach (DataRow Row in dt.Rows)
             {
                 //Create panel
@@ -96,6 +97,9 @@ namespace Bookshop
 
         private void sortByToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
+            foreach (FlowLayoutPanel panel in panels)
+                this.Controls.Remove(panel);
+            this.Text = e.ClickedItem.Text;
             DrawBooks(e.ClickedItem.Text);
         }
 
