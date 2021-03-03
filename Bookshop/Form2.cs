@@ -28,19 +28,15 @@ namespace Bookshop
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            //SortBy.this.Text = SortBy.TITLE;
+            CreatePanels();
             DrawBooks("");
         }
 
-        private void DrawBooks(String SortBy)
+        private void CreatePanels()
         {
             //Create connection and store Table Data into a variable
             string conString = @"Data Source=.\SQLEXPRESS;AttachDbFilename=" + Application.StartupPath + "\\Database.MDF;Integrated Security=True;User Instance=True";
-            string sql = "new";
-            if (SortBy.Equals("")) sql = @"SELECT * FROM Books";
-            else sql = @"SELECT * FROM Books ORDER BY " + SortBy;
-
-            //string sql = @"SELECT * FROM Books";
+            string sql = @"SELECT * FROM Books";
             SqlConnection con = new SqlConnection(conString);
             con.Open();
             SqlDataAdapter da = new SqlDataAdapter(sql, con);
@@ -56,7 +52,7 @@ namespace Bookshop
                 //Create panel
                 FlowLayoutPanel temp = new FlowLayoutPanel();
                 temp.FlowDirection = FlowDirection.TopDown;
-                temp.Location = new Point(SPACING + (i % 4) * (PictureWidth + SPACING), SPACING + (i / 4) * (PanelHeight + SPACING));
+                //temp.Location = new Point(SPACING + (i % 4) * (PictureWidth + SPACING), SPACING + (i / 4) * (PanelHeight + SPACING));
                 temp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
                 temp.Height = PanelHeight;
                 temp.Width = panelWidth;
@@ -68,13 +64,44 @@ namespace Bookshop
                 CreateLabel("Pages: " + Row["Pages"].ToString(), temp);
                 CreateLabel("Price: " + Row["Price"].ToString(), temp);
                 CreateLabel("Stock: " + Row["Stock"].ToString(), temp);
-
                 panels.Add(temp);
-                this.Controls.Add(temp);
                 i++;
             }
         }
-
+        private void DrawBooks(String SortBy)
+        {
+            int intSortBy;
+            switch (SortBy){
+                case "Title":
+                    intSortBy = 1;
+                    break;
+                case "Author":
+                    intSortBy = 2;
+                    break;
+                case "Pages":
+                    intSortBy = 3;
+                    break;
+                case "Price":
+                    intSortBy = 4;
+                    break;
+                case "Stock":
+                    intSortBy = 5;
+                    break;
+                default:
+                    intSortBy = 0;
+                    break;
+            }
+            if(intSortBy != 0)
+                panels.Sort((p1, p2) => p1.Controls[intSortBy].Text.CompareTo(p2.Controls[intSortBy].Text));
+            foreach (FlowLayoutPanel panel in panels)
+                this.Controls.Remove(panel);
+            int len = panels.Count;
+            for (int i = 0; i < len; i++)
+            {
+                panels[i].Location = new Point(SPACING + (i % 4) * (PictureWidth + SPACING), SPACING + (i / 4) * (PanelHeight + SPACING));
+                this.Controls.Add(panels[i]);
+            }
+        }
         private void CreateLabel(String text, FlowLayoutPanel panel)
         {
             Label newLabel = new Label();
@@ -97,9 +124,7 @@ namespace Bookshop
 
         private void sortByToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            foreach (FlowLayoutPanel panel in panels)
-                this.Controls.Remove(panel);
-            this.Text = e.ClickedItem.Text;
+            this.Text = panels.Count().ToString();
             DrawBooks(e.ClickedItem.Text);
         }
 
