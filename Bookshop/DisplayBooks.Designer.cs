@@ -1,6 +1,6 @@
 ﻿namespace Bookshop
 {
-    partial class Form2
+    partial class DisplayBooks
     {
         /// <summary>
         /// Required designer variable.
@@ -35,6 +35,7 @@
             this.pagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.priceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administratorOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +46,7 @@
             this.administratorOptionsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(977, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(549, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -64,42 +65,51 @@
             // titleToolStripMenuItem
             // 
             this.titleToolStripMenuItem.Name = "titleToolStripMenuItem";
-            this.titleToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.titleToolStripMenuItem.Size = new System.Drawing.Size(123, 24);
             this.titleToolStripMenuItem.Text = "Title";
             // 
             // authorToolStripMenuItem
             // 
             this.authorToolStripMenuItem.Name = "authorToolStripMenuItem";
-            this.authorToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.authorToolStripMenuItem.Size = new System.Drawing.Size(123, 24);
             this.authorToolStripMenuItem.Text = "Author";
             // 
             // pagesToolStripMenuItem
             // 
             this.pagesToolStripMenuItem.Name = "pagesToolStripMenuItem";
-            this.pagesToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.pagesToolStripMenuItem.Size = new System.Drawing.Size(123, 24);
             this.pagesToolStripMenuItem.Text = "Pages";
             // 
             // priceToolStripMenuItem
             // 
             this.priceToolStripMenuItem.Name = "priceToolStripMenuItem";
-            this.priceToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.priceToolStripMenuItem.Size = new System.Drawing.Size(123, 24);
             this.priceToolStripMenuItem.Text = "Price";
             // 
             // administratorOptionsToolStripMenuItem
             // 
+            this.administratorOptionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.removeBooksToolStripMenuItem});
             this.administratorOptionsToolStripMenuItem.Name = "administratorOptionsToolStripMenuItem";
             this.administratorOptionsToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
             this.administratorOptionsToolStripMenuItem.Text = "Administrator Options";
             // 
-            // Form2
+            // removeBooksToolStripMenuItem
+            // 
+            this.removeBooksToolStripMenuItem.Name = "removeBooksToolStripMenuItem";
+            this.removeBooksToolStripMenuItem.Size = new System.Drawing.Size(176, 24);
+            this.removeBooksToolStripMenuItem.Text = "Remove Books";
+            this.removeBooksToolStripMenuItem.Click += new System.EventHandler(this.removeBooksToolStripMenuItem_Click);
+            // 
+            // DisplayBooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(977, 497);
+            this.ClientSize = new System.Drawing.Size(549, 295);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form2";
+            this.Name = "DisplayBooks";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
@@ -119,6 +129,7 @@
         private System.Windows.Forms.ToolStripMenuItem administratorOptionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem priceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pagesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem removeBooksToolStripMenuItem;
 
     }
 }
