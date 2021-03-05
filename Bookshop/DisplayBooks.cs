@@ -18,7 +18,8 @@ namespace Bookshop
         const int PanelHeight = PictureHeight + 130;
         const int panelWidth = PictureWidth;
         const int SPACING = 25;
-        List<FlowLayoutPanel> panels = new List<FlowLayoutPanel>();
+        String lastSortBy = "";
+        public List<FlowLayoutPanel> panels = new List<FlowLayoutPanel>();
         public DisplayBooks()
         {
             InitializeComponent();
@@ -26,7 +27,7 @@ namespace Bookshop
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+        public void DisplayBooks_Load(object sender, EventArgs e)
         {
             CreatePanels();
             DrawBooks("");
@@ -50,8 +51,6 @@ namespace Bookshop
         // Create panels of labels and pictures using a Database
         private void CreatePanels()
         {
-            this.Text = Application.StartupPath;
-
             DataTable dt = CreateDt();
 
             //Create a panel for each book and save labels / buttons into panels
@@ -140,13 +139,16 @@ namespace Bookshop
         private void sortByToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
             DrawBooks(e.ClickedItem.Text);
+            lastSortBy = e.ClickedItem.Text;
         }
 
         // Start the RemoveBooks Form
         private void removeBooksToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RemoveBooks removeBooks = new RemoveBooks();
+            RemoveBooks removeBooks = new RemoveBooks(this);
             removeBooks.ShowDialog();
+            DrawBooks(lastSortBy); 
+
         }
 
     }

@@ -13,8 +13,10 @@ namespace Bookshop
 {
     public partial class RemoveBooks : Form
     {
-        public RemoveBooks()
+        DisplayBooks parent = null;
+        public RemoveBooks(DisplayBooks parent)
         {
+            this.parent = parent;
             InitializeComponent();
 
             this.Text = "Remove Books";
@@ -46,7 +48,17 @@ namespace Bookshop
             SqlCommand cmd = new SqlCommand(sql, con);
             cmd.ExecuteScalar();
             con.Close();
-            System.IO.File.Delete(@Application.StartupPath + "\\Images\\" + SelectedBook + ".jpg");
+            int len = parent.panels.Count();
+            bool removed = false;
+            for (int i = 0; i < len && !removed; i++)  
+                if (parent.panels[i].Controls[1].Text == "Title: " + SelectedBook)
+                {
+                    parent.Controls.Remove(parent.panels[i]);
+                    parent.panels.RemoveAt(i);
+                    removed = true;
+               }
+              
+            //System.IO.File.Delete(@Application.StartupPath + "\\Images\\" + SelectedBook + ".jpg");
             BooksList.Items.Remove(BooksList.SelectedItem);
         }
     }
