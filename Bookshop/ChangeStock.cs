@@ -10,12 +10,12 @@ using System.Data.SqlClient;
 
 namespace Bookshop
 {
-    public partial class AddBooks : Form
+    public partial class ChangeStock : Form
     {
-        public AddBooks()
+        public ChangeStock()
         {
             InitializeComponent();
-            this.Text = "Add Books";
+            this.Text = "Change Stock";
             UpdateBooksList();
         }
         private void UpdateBooksList()

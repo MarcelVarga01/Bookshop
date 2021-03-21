@@ -162,7 +162,7 @@ namespace Bookshop
 
         private void addBooksToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddBooks addBooks = new AddBooks();
+            ChangeStock addBooks = new ChangeStock();
             addBooks.ShowDialog();
             ClearPanels();
             CreatePanels();
