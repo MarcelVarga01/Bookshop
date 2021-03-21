@@ -13,10 +13,8 @@ namespace Bookshop
 {
     public partial class RemoveBooks : Form
     {
-        DisplayBooks parent = null;
-        public RemoveBooks(DisplayBooks parent)
+        public RemoveBooks()
         {
-            this.parent = parent;
             InitializeComponent();
 
             this.Text = "Remove Books";
@@ -31,6 +29,7 @@ namespace Bookshop
             DataTable dt = new DataTable();
             da.Fill(dt);
 
+            // Populate BookList with book titles from the database
             foreach (DataRow Row in dt.Rows)
                 BooksList.Items.Add(Row["Title"]);
         }
@@ -39,27 +38,16 @@ namespace Bookshop
         private void button1_Click(object sender, EventArgs e)
         {
             if (BooksList.SelectedIndex == -1) return;
+
+            // Delete the book from the database
             string SelectedBook = BooksList.GetItemText(BooksList.SelectedItem);
             string conString = @"Data Source=.\SQLEXPRESS;AttachDbFilename=" + Application.StartupPath + "\\Database.mdf;Integrated Security=True;User Instance=True";
             string sql = @"DELETE FROM Books WHERE Title='" + SelectedBook + "'";
-            SqlConnection con = new SqlConnection(conString);
-            con.Open();
+            SqlConnection con = new SqlConnection(conString); con.Open();
             SqlDataAdapter da = new SqlDataAdapter(sql, con);
             SqlCommand cmd = new SqlCommand(sql, con);
             cmd.ExecuteScalar();
             con.Close();
-            int len = parent.panels.Count();
-            bool removed = false;
-            for (int i = 0; i < len && !removed; i++)  
-                if (parent.panels[i].Controls[1].Text == "Title: " + SelectedBook)
-                {
-                    parent.Controls.Remove(parent.panels[i]);
-                    parent.panels.RemoveAt(i);
-                    removed = true;
-               }
-              
-            //System.IO.File.Delete(@Application.StartupPath + "\\Images\\" + SelectedBook + ".jpg");
-            BooksList.Items.Remove(BooksList.SelectedItem);
         }
     }
 }

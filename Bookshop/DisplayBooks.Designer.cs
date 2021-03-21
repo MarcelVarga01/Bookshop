@@ -36,6 +36,7 @@
             this.priceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administratorOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,13 +84,14 @@
             // priceToolStripMenuItem
             // 
             this.priceToolStripMenuItem.Name = "priceToolStripMenuItem";
-            this.priceToolStripMenuItem.Size = new System.Drawing.Size(123, 24);
+            this.priceToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
             this.priceToolStripMenuItem.Text = "Price";
             // 
             // administratorOptionsToolStripMenuItem
             // 
             this.administratorOptionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.removeBooksToolStripMenuItem});
+            this.removeBooksToolStripMenuItem,
+            this.addBooksToolStripMenuItem});
             this.administratorOptionsToolStripMenuItem.Name = "administratorOptionsToolStripMenuItem";
             this.administratorOptionsToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
             this.administratorOptionsToolStripMenuItem.Text = "Administrator Options";
@@ -100,6 +102,13 @@
             this.removeBooksToolStripMenuItem.Size = new System.Drawing.Size(176, 24);
             this.removeBooksToolStripMenuItem.Text = "Remove Books";
             this.removeBooksToolStripMenuItem.Click += new System.EventHandler(this.removeBooksToolStripMenuItem_Click);
+            // 
+            // addBooksToolStripMenuItem
+            // 
+            this.addBooksToolStripMenuItem.Name = "addBooksToolStripMenuItem";
+            this.addBooksToolStripMenuItem.Size = new System.Drawing.Size(176, 24);
+            this.addBooksToolStripMenuItem.Text = "Add Books";
+            this.addBooksToolStripMenuItem.Click += new System.EventHandler(this.addBooksToolStripMenuItem_Click);
             // 
             // DisplayBooks
             // 
@@ -130,6 +139,7 @@
         private System.Windows.Forms.ToolStripMenuItem priceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pagesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem removeBooksToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addBooksToolStripMenuItem;
 
     }
 }

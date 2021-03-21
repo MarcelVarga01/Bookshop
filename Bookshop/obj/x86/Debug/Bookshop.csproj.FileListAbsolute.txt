@@ -11,3 +11,4 @@ C:\Users\marcel\Documents\Visual Studio 2010\Projects\Bookshop\Bookshop\obj\x86\
 C:\Users\marcel\documents\visual studio 2010\Projects\Bookshop\Bookshop\obj\x86\Debug\Bookshop.DisplayBooks.resources
 C:\Users\marcel\documents\visual studio 2010\Projects\Bookshop\Bookshop\obj\x86\Debug\Bookshop.Login.resources
 C:\Users\marcel\Documents\Visual Studio 2010\Projects\Bookshop\Bookshop\obj\x86\Debug\Bookshop.RemoveBooks.resources
+C:\Users\marcel\documents\visual studio 2010\Projects\Bookshop\Bookshop\obj\x86\Debug\Bookshop.AddBooks.resources

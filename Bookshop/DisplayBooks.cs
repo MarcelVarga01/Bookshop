@@ -134,6 +134,14 @@ namespace Bookshop
                 this.Controls.Add(panels[i]);
             }
         }
+        void ClearPanels()
+        {
+            while (panels.Count() > 0)
+            {
+                Controls.Remove(panels[0]);
+                panels.RemoveAt(0);
+            }
+        }
 
         // Handle Sort By changes
         private void sortByToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -145,11 +153,20 @@ namespace Bookshop
         // Start the RemoveBooks Form
         private void removeBooksToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RemoveBooks removeBooks = new RemoveBooks(this);
+            RemoveBooks removeBooks = new RemoveBooks();
             removeBooks.ShowDialog();
+            ClearPanels();
+            CreatePanels();
             DrawBooks(lastSortBy); 
-
         }
 
+        private void addBooksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddBooks addBooks = new AddBooks();
+            addBooks.ShowDialog();
+            ClearPanels();
+            CreatePanels();
+            DrawBooks(lastSortBy);
+        }    
     }
 }
