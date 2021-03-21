@@ -48,6 +48,10 @@ namespace Bookshop
             SqlCommand cmd = new SqlCommand(sql, con);
             cmd.ExecuteScalar();
             con.Close();
+
+            // Remove Book image from Images folder and remove book from BooksList
+            System.IO.File.Delete(@Application.StartupPath + "\\Images\\" + SelectedBook + ".jpg");
+            BooksList.Items.Remove(BooksList.SelectedItem);
         }
     }
 }

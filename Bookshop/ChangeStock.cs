@@ -61,9 +61,11 @@ namespace Bookshop
 
             // Change Book Stock value in the Database
             string SelectedBook = BooksList.GetItemText(BooksList.SelectedItem);
+
             string conString = @"Data Source=.\SQLEXPRESS;AttachDbFilename=" + Application.StartupPath + "\\Database.mdf;Integrated Security=True;User Instance=True";
             string sql = @"UPDATE Books SET Stock ='" + currentStock.ToString() + "' WHERE Title = '" + SelectedBook + "'";
-            SqlConnection con = new SqlConnection(conString); con.Open();
+            SqlConnection con = new SqlConnection(conString); 
+            con.Open();
             SqlCommand cmd = new SqlCommand(sql, con);
             cmd.ExecuteScalar();
             con.Close();

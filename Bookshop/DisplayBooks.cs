@@ -33,12 +33,11 @@ namespace Bookshop
             DrawBooks("");
         }
 
-        //Create connection and store return Data Table
+        //Create connection and return a Data Table
         public static DataTable CreateDt()
         {
             string conString = @"Data Source=.\SQLEXPRESS;AttachDbFilename=" + Application.StartupPath + "\\Database.mdf;Integrated Security=True;User Instance=True";
-            string sql = "";
-            sql = @"SELECT * FROM Books";
+            string sql = @"SELECT * FROM Books";
             SqlConnection con = new SqlConnection(conString);
             con.Open();
             SqlDataAdapter da = new SqlDataAdapter(sql, con);
@@ -162,7 +161,16 @@ namespace Bookshop
 
         private void addBooksToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ChangeStock addBooks = new ChangeStock();
+            ChangeStock changeStock = new ChangeStock();
+            changeStock.ShowDialog();
+            ClearPanels();
+            CreatePanels();
+            DrawBooks(lastSortBy);
+        }
+
+        private void addBooksToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            AddBooks addBooks = new AddBooks();
             addBooks.ShowDialog();
             ClearPanels();
             CreatePanels();
