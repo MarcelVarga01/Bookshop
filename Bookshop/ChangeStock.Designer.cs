@@ -43,7 +43,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(64, 30);
+            this.label1.Location = new System.Drawing.Point(124, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(335, 39);
             this.label1.TabIndex = 10;
@@ -125,7 +125,7 @@
             this.StockCount.TabIndex = 19;
             this.StockCount.Text = "Select Book";
             // 
-            // AddBooks
+            // ChangeStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -139,7 +139,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.BooksList);
             this.Controls.Add(this.label1);
-            this.Name = "AddBooks";
+            this.Name = "ChangeStock";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.ResumeLayout(false);

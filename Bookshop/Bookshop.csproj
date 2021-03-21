@@ -66,11 +66,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="AddBooks.cs">
+    <Compile Include="ChangeStock.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddBooks.Designer.cs">
-      <DependentUpon>AddBooks.cs</DependentUpon>
+    <Compile Include="ChangeStock.Designer.cs">
+      <DependentUpon>ChangeStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddBook.Designer.cs">
+      <DependentUpon>AddBook.cs</DependentUpon>
     </Compile>
     <Compile Include="RemoveBooks.cs">
       <SubType>Form</SubType>
@@ -92,8 +98,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AddBooks.resx">
-      <DependentUpon>AddBooks.cs</DependentUpon>
+    <EmbeddedResource Include="ChangeStock.resx">
+      <DependentUpon>ChangeStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddBook.resx">
+      <DependentUpon>AddBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
