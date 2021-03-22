@@ -30,17 +30,8 @@ namespace Bookshop
                     MessageBox.Show("Fields cannot be left empty!");
                     return;
                 }
-            if (!File.Exists(coverImagePath))
-            {
-                MessageBox.Show("Cover Image Path invalid!");
-                return;
-            }
 
-            // Avoid exception when trying to copy to an already existing file
-            if (File.Exists(Application.StartupPath + "\\Images\\" + TitleTextBox.Text + ".jpg"))
-                System.IO.File.Delete(Application.StartupPath + "\\Images\\" + TitleTextBox.Text + ".jpg");
-                // Copy from image path to Images folder in the application's startup path
-            File.Copy(coverImagePath, Application.StartupPath + "\\Images\\" + TitleTextBox.Text + ".jpg");
+            // Check fields entries are correct
             int pages, stock;
             float price;
             if (!int.TryParse(PagesTextBox.Text, out pages))
@@ -58,7 +49,19 @@ namespace Bookshop
                 MessageBox.Show("Stock field should be an integer!");
                 return;
             }
-            
+            if (!File.Exists(coverImagePath))
+            {
+                MessageBox.Show("Cover Image has not been provided!");
+                return;
+            }
+
+            // Avoid exception when trying to copy to an already existing file
+            if (File.Exists(Application.StartupPath + "\\Images\\" + TitleTextBox.Text + ".jpg"))
+                System.IO.File.Delete(Application.StartupPath + "\\Images\\" + TitleTextBox.Text + ".jpg");
+            // Copy from image path to Images folder in the application's startup path
+            File.Copy(coverImagePath, Application.StartupPath + "\\Images\\" + TitleTextBox.Text + ".jpg");
+
+
             string conString = @"Data Source=.\SQLEXPRESS;AttachDbFilename=" + Application.StartupPath + "\\Database.mdf;Integrated Security=True;User Instance=True";
             string sql = @"INSERT INTO Books(Title, Author, Pages, Price, Stock) VALUES ('"
                 + TitleTextBox.Text + "', '"
@@ -73,6 +76,7 @@ namespace Bookshop
             cmd.ExecuteScalar();
             con.Close();
             MessageBox.Show("Book added succesfully!");
+            this.Close();
         }
 
         private void CoverImageTextBox_KeyDown(object sender, KeyEventArgs e)
