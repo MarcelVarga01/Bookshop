@@ -13,11 +13,14 @@ namespace Bookshop
 {
     public partial class AddBooks : Form
     {
+
+        string coverImagePath;
+
         public AddBooks()
         {
             InitializeComponent();
         }
-
+        
         private void AddButton_Click(object sender, EventArgs e)
         {
             // Check that all TextBoxes have text in them
@@ -27,16 +30,17 @@ namespace Bookshop
                     MessageBox.Show("Fields cannot be left empty!");
                     return;
                 }
-            if (!File.Exists(CoverImageTextBox.Text))
+            if (!File.Exists(coverImagePath))
             {
                 MessageBox.Show("Cover Image Path invalid!");
                 return;
             }
 
             // Avoid exception when trying to copy to an already existing file
-            if (!File.Exists(Application.StartupPath + "\\Images\\" + TitleTextBox.Text + ".jpg")) 
+            if (File.Exists(Application.StartupPath + "\\Images\\" + TitleTextBox.Text + ".jpg"))
+                System.IO.File.Delete(Application.StartupPath + "\\Images\\" + TitleTextBox.Text + ".jpg");
                 // Copy from image path to Images folder in the application's startup path
-                File.Copy(CoverImageTextBox.Text, Application.StartupPath + "\\Images\\" + TitleTextBox.Text + ".jpg");
+            File.Copy(coverImagePath, Application.StartupPath + "\\Images\\" + TitleTextBox.Text + ".jpg");
             int pages, stock;
             float price;
             if (!int.TryParse(PagesTextBox.Text, out pages))
@@ -77,7 +81,7 @@ namespace Bookshop
                 AddButton_Click(sender, e);
         }
 
-        private void CoverImageTextBox_DragEnter(object sender, DragEventArgs e)
+        private void pictureBox1_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
@@ -89,10 +93,12 @@ namespace Bookshop
             }
         }
 
-        private void CoverImageTextBox_DragDrop(object sender, DragEventArgs e)
+        private void pictureBox1_DragDrop(object sender, DragEventArgs e)
         {
             string[] imagePath = (string[])e.Data.GetData(DataFormats.FileDrop, false);
-            CoverImageTextBox.Text = imagePath[0];
+            coverImagePath = imagePath[0];
+            pictureBox1.ImageLocation = imagePath[0];
+            
         }
 
     }
