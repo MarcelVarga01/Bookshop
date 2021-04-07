@@ -20,7 +20,7 @@ namespace Bookshop
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Login());
             //if (ok == true) 
-            Application.Run(new DisplayBooks());
+            Application.Run(new displayBooks());
             //Application.Run(new AdminForms());
         }
     }

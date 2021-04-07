@@ -1,6 +1,6 @@
 ﻿namespace Bookshop
 {
-    partial class DisplayBooks
+    partial class displayBooks
     {
         /// <summary>
         /// Required designer variable.
@@ -35,9 +35,10 @@
             this.pagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.priceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administratorOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ChangeStock = new System.Windows.Forms.ToolStripMenuItem();
             this.addBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.basketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +46,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sortByToolStripMenuItem,
-            this.administratorOptionsToolStripMenuItem});
+            this.administratorOptionsToolStripMenuItem,
+            this.basketToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(549, 28);
@@ -98,13 +100,6 @@
             this.administratorOptionsToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
             this.administratorOptionsToolStripMenuItem.Text = "Administrator Options";
             // 
-            // removeBooksToolStripMenuItem
-            // 
-            this.removeBooksToolStripMenuItem.Name = "removeBooksToolStripMenuItem";
-            this.removeBooksToolStripMenuItem.Size = new System.Drawing.Size(176, 24);
-            this.removeBooksToolStripMenuItem.Text = "Remove Books";
-            this.removeBooksToolStripMenuItem.Click += new System.EventHandler(this.removeBooksToolStripMenuItem_Click);
-            // 
             // ChangeStock
             // 
             this.ChangeStock.Name = "ChangeStock";
@@ -118,6 +113,20 @@
             this.addBooksToolStripMenuItem.Size = new System.Drawing.Size(176, 24);
             this.addBooksToolStripMenuItem.Text = "Add Books";
             this.addBooksToolStripMenuItem.Click += new System.EventHandler(this.addBooksToolStripMenuItem_Click_1);
+            // 
+            // removeBooksToolStripMenuItem
+            // 
+            this.removeBooksToolStripMenuItem.Name = "removeBooksToolStripMenuItem";
+            this.removeBooksToolStripMenuItem.Size = new System.Drawing.Size(176, 24);
+            this.removeBooksToolStripMenuItem.Text = "Remove Books";
+            this.removeBooksToolStripMenuItem.Click += new System.EventHandler(this.removeBooksToolStripMenuItem_Click);
+            // 
+            // basketToolStripMenuItem
+            // 
+            this.basketToolStripMenuItem.Name = "basketToolStripMenuItem";
+            this.basketToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
+            this.basketToolStripMenuItem.Text = "Basket";
+            this.basketToolStripMenuItem.Click += new System.EventHandler(this.basketToolStripMenuItem_Click);
             // 
             // DisplayBooks
             // 
@@ -150,6 +159,7 @@
         private System.Windows.Forms.ToolStripMenuItem removeBooksToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ChangeStock;
         private System.Windows.Forms.ToolStripMenuItem addBooksToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem basketToolStripMenuItem;
 
     }
 }

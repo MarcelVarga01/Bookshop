@@ -69,7 +69,9 @@ namespace Bookshop
             SqlCommand cmd = new SqlCommand(sql, con);
             cmd.ExecuteScalar();
             con.Close();
-
+            if (add) MessageBox.Show("Stock added successfully!");
+            else MessageBox.Show("Stock removed successfully!");
+            quantity.Text = "";
             StockCount.Text = currentStock.ToString();
         }
 

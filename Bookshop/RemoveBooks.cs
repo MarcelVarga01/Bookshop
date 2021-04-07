@@ -52,6 +52,7 @@ namespace Bookshop
             // Remove Book image from Images folder and remove book from BooksList
             System.IO.File.Delete(@Application.StartupPath + "\\Images\\" + SelectedBook + ".jpg");
             BooksList.Items.Remove(BooksList.SelectedItem);
+            MessageBox.Show("Book removed successfully!");
 
         }
     }
