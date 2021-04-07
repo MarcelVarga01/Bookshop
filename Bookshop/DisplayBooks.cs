@@ -28,9 +28,10 @@ namespace Bookshop
         public displayBooks()
         {
             InitializeComponent();
+            this.Text = "Books List";
             Size = new Size(940,800);
             this.StartPosition = FormStartPosition.CenterScreen;
-            //if (!Program.admin) administratorOptionsToolStripMenuItem.Visible = false;
+            if (!Program.admin) administratorOptionsToolStripMenuItem.Visible = false;
         }
 
         public void DisplayBooks_Load(object sender, EventArgs e)

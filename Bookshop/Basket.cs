@@ -28,10 +28,10 @@ namespace Bookshop
         {
             this.books = books;
             this.parent = parent;
-            this.Text = "Basket";
             this.StartPosition = FormStartPosition.CenterScreen;
             if (books.Count == 0) displayBasketEmpty();
             InitializeComponent();
+            this.Text = "Basket";
             mergeBookEntries();
             createPageElements();
             addFooter();
@@ -173,6 +173,8 @@ namespace Bookshop
             }
             con.Close();
             MessageBox.Show("Books bought successfully!");
+            books.Clear();
+            this.Controls.Clear();
             parent.redraw(parent.lastSortBy);
             this.Close();
         }

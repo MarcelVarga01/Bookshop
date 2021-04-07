@@ -18,8 +18,8 @@ namespace Bookshop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Login());
-            //if (ok == true) 
+            Application.Run(new Login());
+            if (ok == true) 
             Application.Run(new displayBooks());
             //Application.Run(new AdminForms());
         }

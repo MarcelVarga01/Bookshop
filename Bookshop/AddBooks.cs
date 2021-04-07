@@ -19,6 +19,7 @@ namespace Bookshop
         public AddBooks()
         {
             InitializeComponent();
+            this.Text = "Add Books";
         }
         
         private void AddButton_Click(object sender, EventArgs e)

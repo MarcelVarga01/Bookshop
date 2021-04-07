@@ -14,6 +14,7 @@ namespace Bookshop
         public Login()
         {
             InitializeComponent();
+            this.Text = "Login";
         }
 
         private void Form1_Load(object sender, EventArgs e)
