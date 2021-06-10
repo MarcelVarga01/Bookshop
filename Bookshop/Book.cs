@@ -25,7 +25,7 @@ namespace Bookshop
 
         public override string ToString()
         {
-            return ("Title: " + title + "\nQuantity: " + quantity.Text + "\nPrice " + price.ToString());
+            return ("Title: " + title + "\nQuantity: " + quantity.Text + "\nPrice: " + price.ToString());
         }
         public bool TextBoxEmpty()
         {
@@ -42,7 +42,17 @@ namespace Bookshop
                 MessageBox.Show("Please enter a value in the Text Box");
                 return 0;
             }
-            return Int32.Parse(quantity.Text);
+            try
+            {
+                return Int32.Parse(quantity.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Please enter a valid number in the Text Box");
+                return 0;
+            }
+ 
+            
         }
         public int GetStock()
         {

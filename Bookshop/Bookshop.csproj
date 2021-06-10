@@ -86,6 +86,12 @@
     <Compile Include="Basket.Designer.cs">
       <DependentUpon>Basket.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="RemoveBooks.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Basket.resx">
       <DependentUpon>Basket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChangeStock.resx">
       <DependentUpon>ChangeStock.cs</DependentUpon>
@@ -135,6 +144,10 @@
       <DependentUpon>RemoveBooks.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="bin\Debug\Bookshop.exe.config" />
+    <None Include="bin\Debug\Bookshop.vshost.exe.config" />
+    <None Include="bin\Debug\WindowsFormsApplication1.vshost.exe.manifest" />
+    <None Include="bin\Release\Bookshop.exe.config" />
     <None Include="DatabaseDataSet.xsc">
       <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
     </None>
@@ -189,6 +202,41 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\Bookshop.exe" />
+    <Content Include="bin\Debug\Bookshop.pdb" />
+    <Content Include="bin\Debug\Bookshop.vshost.exe" />
+    <Content Include="bin\Debug\Database.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="bin\Debug\Database_log.ldf">
+      <DependentUpon>Database.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="bin\Debug\Images\a.jpg" />
+    <Content Include="bin\Debug\Images\Adventures of Huckleberry Finn.jpg" />
+    <Content Include="bin\Debug\Images\Bad book.jpg" />
+    <Content Include="bin\Debug\Images\Crime and Punishment.jpg" />
+    <Content Include="bin\Debug\Images\Oliver Twist.jpg" />
+    <Content Include="bin\Debug\Images\Robinson Crusoe.jpg" />
+    <Content Include="bin\Debug\Images\The Shining.jpg" />
+    <Content Include="bin\Release\Bookshop.exe" />
+    <Content Include="bin\Release\Bookshop.pdb" />
+    <Content Include="bin\Release\Database.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="bin\Release\Database_log.ldf">
+      <DependentUpon>Database.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="bin\Release\Images\Adventures of Huckleberry Finn.jpg" />
+    <Content Include="bin\Release\Images\Bad book.jpg" />
+    <Content Include="bin\Release\Images\Crime and Punishment.jpg" />
+    <Content Include="bin\Release\Images\Oliver Twist.jpg" />
+    <Content Include="bin\Release\Images\Robinson Crusoe.jpg" />
+    <Content Include="bin\Release\Images\The Shining.jpg" />
+    <Content Include="credentials.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Database.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -39,6 +39,7 @@
             this.addBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.basketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,7 +96,8 @@
             this.administratorOptionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ChangeStock,
             this.addBooksToolStripMenuItem,
-            this.removeBooksToolStripMenuItem});
+            this.removeBooksToolStripMenuItem,
+            this.changePasswordToolStripMenuItem});
             this.administratorOptionsToolStripMenuItem.Name = "administratorOptionsToolStripMenuItem";
             this.administratorOptionsToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
             this.administratorOptionsToolStripMenuItem.Text = "Administrator Options";
@@ -103,21 +105,21 @@
             // ChangeStock
             // 
             this.ChangeStock.Name = "ChangeStock";
-            this.ChangeStock.Size = new System.Drawing.Size(176, 24);
+            this.ChangeStock.Size = new System.Drawing.Size(193, 24);
             this.ChangeStock.Text = "Change Stock";
             this.ChangeStock.Click += new System.EventHandler(this.addBooksToolStripMenuItem_Click);
             // 
             // addBooksToolStripMenuItem
             // 
             this.addBooksToolStripMenuItem.Name = "addBooksToolStripMenuItem";
-            this.addBooksToolStripMenuItem.Size = new System.Drawing.Size(176, 24);
+            this.addBooksToolStripMenuItem.Size = new System.Drawing.Size(193, 24);
             this.addBooksToolStripMenuItem.Text = "Add Books";
             this.addBooksToolStripMenuItem.Click += new System.EventHandler(this.addBooksToolStripMenuItem_Click_1);
             // 
             // removeBooksToolStripMenuItem
             // 
             this.removeBooksToolStripMenuItem.Name = "removeBooksToolStripMenuItem";
-            this.removeBooksToolStripMenuItem.Size = new System.Drawing.Size(176, 24);
+            this.removeBooksToolStripMenuItem.Size = new System.Drawing.Size(193, 24);
             this.removeBooksToolStripMenuItem.Text = "Remove Books";
             this.removeBooksToolStripMenuItem.Click += new System.EventHandler(this.removeBooksToolStripMenuItem_Click);
             // 
@@ -128,7 +130,14 @@
             this.basketToolStripMenuItem.Text = "Basket";
             this.basketToolStripMenuItem.Click += new System.EventHandler(this.basketToolStripMenuItem_Click);
             // 
-            // DisplayBooks
+            // changePasswordToolStripMenuItem
+            // 
+            this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(193, 24);
+            this.changePasswordToolStripMenuItem.Text = "Change Password";
+            this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
+            // 
+            // displayBooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -136,7 +145,7 @@
             this.ClientSize = new System.Drawing.Size(549, 295);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "DisplayBooks";
+            this.Name = "displayBooks";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.DisplayBooks_Load);
@@ -160,6 +169,7 @@
         private System.Windows.Forms.ToolStripMenuItem ChangeStock;
         private System.Windows.Forms.ToolStripMenuItem addBooksToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem basketToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
 
     }
 }

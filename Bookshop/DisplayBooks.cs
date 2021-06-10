@@ -213,7 +213,12 @@ namespace Bookshop
             lastSortReversed = !lastSortReversed;
             redraw(lastSortBy);
         }
-
+        // Start the ChangePassword Form
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangePassword changePassword = new ChangePassword();
+            changePassword.ShowDialog();
+        }
         // Start the ChangeStock Form
         private void addBooksToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -259,14 +264,10 @@ namespace Bookshop
             }
             else
             {
-                //MessageBox.Show(book.ToString() + "\nHas been added to your basket!");
+                MessageBox.Show(book.ToString() + "\nHas been added to your basket!");
                 booksToBeBought.Add(new BookEntry(book.GetTitle(), book.GetQuantity(), book.GetPrice()));
                 book.subtractStock(quantityToBuy);
                 book.ClearTextBox();
-            }
-            foreach (BookEntry book0 in booksToBeBought)
-            {
-                System.Diagnostics.Debug.Write(book0.ToString() + '\n');
             }
         }
     }

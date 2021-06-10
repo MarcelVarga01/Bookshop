@@ -43,9 +43,10 @@ namespace Bookshop
         {
             label5.Visible = false;
             bool ok = false;
+
             if (index == 1)
             {
-                if (password == Program.password)
+                if (Program.hash(password).Equals(Program.password))
                 {
                     label4.Visible = false;
                     ok = true;
